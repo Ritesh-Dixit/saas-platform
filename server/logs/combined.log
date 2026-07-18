@@ -1,0 +1,108 @@
+2026-07-15T11:37:09.063Z [INFO]: Server started successfully
+2026-07-15T11:37:09.069Z [WARN]: This is a warning
+2026-07-15T11:37:09.070Z [ERROR]: This is an error
+2026-07-15T11:56:50.778Z [INFO]: Environment variables loaded successfully
+2026-07-15T11:56:50.797Z [INFO]: Server running on http://localhost:5000
+2026-07-15T11:56:57.135Z [INFO]: GET /favicon.ico
+2026-07-15T11:56:58.335Z [INFO]: GET /
+2026-07-15T11:58:34.883Z [INFO]: Environment variables loaded successfully
+2026-07-15T11:58:34.894Z [INFO]: Server running on http://localhost:5000
+2026-07-15T11:59:43.441Z [INFO]: Environment variables loaded successfully
+2026-07-15T11:59:43.455Z [INFO]: Server running on http://localhost:5000
+2026-07-15T11:59:43.550Z [INFO]: GET /
+2026-07-15T11:59:43.727Z [INFO]: GET /
+2026-07-15T11:59:43.940Z [INFO]: GET /
+2026-07-15T11:59:44.146Z [INFO]: GET /
+2026-07-15T12:01:29.998Z [INFO]: Environment variables loaded successfully
+2026-07-15T12:01:30.017Z [INFO]: Server running on http://localhost:5000
+2026-07-15T12:02:17.982Z [INFO]: Environment variables loaded successfully
+2026-07-15T12:02:17.990Z [INFO]: Server running on http://localhost:5000
+2026-07-15T12:02:17.990Z [INFO]: Environment: development
+2026-07-15T12:02:41.443Z [INFO]: GET /
+2026-07-16T08:08:08.192Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:08:08.215Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:08:08.216Z [INFO]: Environment: development
+2026-07-16T08:08:19.912Z [INFO]: GET /
+2026-07-16T08:08:20.140Z [INFO]: GET /favicon.ico
+2026-07-16T08:09:01.073Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:09:01.093Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:09:01.094Z [INFO]: Environment: development
+2026-07-16T08:09:09.036Z [INFO]: GET /
+2026-07-16T08:09:59.252Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:09:59.263Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:09:59.264Z [INFO]: Environment: development
+2026-07-16T08:11:25.582Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:11:25.597Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:11:25.598Z [INFO]: Environment: development
+2026-07-16T08:13:23.460Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:13:23.478Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:13:23.479Z [INFO]: Environment: development
+2026-07-16T08:14:30.921Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:14:30.934Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:14:30.934Z [INFO]: Environment: development
+2026-07-16T08:15:45.843Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:15:45.885Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:15:45.886Z [INFO]: Environment: development
+2026-07-16T08:16:46.337Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:16:46.355Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:16:46.356Z [INFO]: Environment: development
+2026-07-16T08:17:29.629Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:17:29.644Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:17:29.645Z [INFO]: Environment: development
+2026-07-16T08:20:49.101Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:20:49.109Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:20:49.110Z [INFO]: Environment: development
+2026-07-16T08:26:05.473Z [INFO]: Environment variables loaded successfully
+2026-07-16T08:26:05.533Z [INFO]: Server running on http://localhost:5000
+2026-07-16T08:26:05.536Z [INFO]: Environment: development
+2026-07-16T13:19:11.724Z [INFO]: GET /
+2026-07-17T13:38:07.140Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:38:07.147Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:38:07.147Z [INFO]: Environment: development
+2026-07-17T13:41:05.325Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:41:05.369Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:41:05.370Z [INFO]: Environment: development
+2026-07-17T13:42:00.057Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:42:00.065Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:42:00.066Z [INFO]: Environment: development
+2026-07-17T13:42:06.721Z [INFO]: GET /
+2026-07-17T13:42:06.843Z [INFO]: GET /favicon.ico
+2026-07-17T13:42:08.108Z [INFO]: GET /
+2026-07-17T13:44:08.689Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:44:08.694Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:44:08.695Z [INFO]: Environment: development
+2026-07-17T13:44:55.569Z [INFO]: GET /
+2026-07-17T13:44:57.161Z [INFO]: GET /
+2026-07-17T13:46:23.083Z [INFO]: POST /
+2026-07-17T13:46:27.628Z [INFO]: POST /
+2026-07-17T13:46:51.489Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:46:51.503Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:46:51.503Z [INFO]: Environment: development
+2026-07-17T13:46:56.774Z [INFO]: POST /
+2026-07-17T13:47:15.302Z [INFO]: POST /api/auth/me
+2026-07-17T13:47:17.178Z [INFO]: POST /api/auth/me
+2026-07-17T13:47:18.770Z [INFO]: POST /api/auth/me
+2026-07-17T13:47:32.114Z [INFO]: GET /
+2026-07-17T13:49:05.013Z [INFO]: GET /api/auth/reset-password
+2026-07-17T13:49:10.094Z [INFO]: GET /
+2026-07-17T13:49:11.138Z [INFO]: GET /
+2026-07-17T13:49:27.339Z [INFO]: GET /
+2026-07-17T13:49:33.996Z [INFO]: GET /
+2026-07-17T13:50:15.990Z [INFO]: GET /
+2026-07-17T13:50:22.903Z [INFO]: GET /
+2026-07-17T13:50:23.662Z [INFO]: GET /
+2026-07-17T13:50:26.859Z [INFO]: GET /
+2026-07-17T13:50:28.017Z [INFO]: GET /
+2026-07-17T13:50:58.665Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:50:58.679Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:50:58.679Z [INFO]: Environment: development
+2026-07-17T13:53:49.146Z [INFO]: GET /api-docs
+2026-07-17T13:53:49.184Z [INFO]: GET /api-docs/
+2026-07-17T13:53:49.300Z [INFO]: GET /api-docs/swagger-ui.css
+2026-07-17T13:53:49.304Z [INFO]: GET /api-docs/swagger-ui-bundle.js
+2026-07-17T13:53:49.315Z [INFO]: GET /api-docs/swagger-ui-standalone-preset.js
+2026-07-17T13:53:49.326Z [INFO]: GET /api-docs/swagger-ui-init.js
+2026-07-17T13:54:27.411Z [INFO]: POST /api/projects
+2026-07-17T13:56:45.648Z [INFO]: Environment variables loaded successfully
+2026-07-17T13:56:45.668Z [INFO]: Server running on http://localhost:5000
+2026-07-17T13:56:45.669Z [INFO]: Environment: development
