@@ -15,6 +15,8 @@ import {
   limiter,
   hppMiddleware,
 } from "./config/security";
+import planRoutes from "./routes/planRoutes";
+import subscriptionRoutes from "./routes/subscriptionRoutes";
 
 const app = express();
 
@@ -46,7 +48,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/upload", uploadRoutes);
-
+app.use("/api/plans", planRoutes);
+app.use("/api/subscriptions", subscriptionRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.use(errorHandler);
