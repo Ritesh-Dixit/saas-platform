@@ -6,7 +6,7 @@ import cors from "cors";
 export const helmetMiddleware = helmet();
 
 export const corsMiddleware = cors({
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials: true,
 });
 
