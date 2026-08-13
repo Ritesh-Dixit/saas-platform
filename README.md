@@ -1,8 +1,23 @@
 # SaaS Platform
 
-A full-stack SaaS application built to demonstrate secure authentication, subscription management, project management, and modern frontend-backend integration.
+A full-stack SaaS Subscription Management Platform built to demonstrate secure authentication, project management, subscription management, and modern frontend-backend integration.
 
-The application allows users to create an account, securely log in, manage their projects, explore subscription plans, and choose a plan through a protected API. The project follows a modular architecture and uses TypeScript across both the frontend and backend.
+The application allows users to create an account, securely log in, manage their projects, explore subscription plans, and create subscriptions through protected APIs.
+
+The project uses TypeScript across both the frontend and backend and follows a modular architecture.
+
+---
+
+## Live Demo
+
+**Live Application:**  
+https://saas-platform-client.onrender.com
+
+**Backend API:**  
+https://saas-platform-y9fr.onrender.com
+
+**GitHub Repository:**  
+https://github.com/Ritesh-Dixit/saas-platform
 
 ---
 
@@ -44,7 +59,10 @@ The application allows users to create an account, securely log in, manage their
 - Centralized error handling
 - Logging with Winston
 - API testing with Jest and Supertest
-- Security middleware with Helmet, rate limiting, and HPP protection
+- Security middleware with Helmet
+- Rate limiting
+- HPP protection
+- CORS configuration
 
 ---
 
@@ -69,6 +87,7 @@ The application allows users to create an account, securely log in, manage their
 - Prisma ORM
 - PostgreSQL
 - JSON Web Tokens (JWT)
+- bcrypt
 - Zod
 - Multer
 - Nodemailer
@@ -77,14 +96,36 @@ The application allows users to create an account, securely log in, manage their
 - Jest
 - Supertest
 
+### Deployment
+
+- Render
+- PostgreSQL
+- Prisma Migrate
+
 ---
 
-## Project Structure
+## Project Architecture
+
+The project follows a separated frontend and backend architecture.
 
 ```text
+Frontend
+React + TypeScript
+       |
+       | REST API
+       ↓
+Backend
+Node.js + Express + TypeScript
+       |
+       ↓
+Prisma ORM
+       |
+       ↓
+PostgreSQL
+Project Structure
 saas-platform/
 │
-├── client/                     # React frontend
+├── client/                         # React frontend
 │   ├── src/
 │   │   ├── api/
 │   │   ├── components/
@@ -94,14 +135,17 @@ saas-platform/
 │   │   ├── routes/
 │   │   ├── services/
 │   │   └── types/
+│   │
 │   └── package.json
 │
-├── server/                     # Express backend
+├── server/                         # Express backend
 │   ├── prisma/
 │   │   ├── migrations/
-│   │   └── schema.prisma
+│   │   ├── schema.prisma
+│   │   └── seed.ts
 │   │
 │   ├── src/
+│   │   ├── config/
 │   │   ├── controllers/
 │   │   ├── middleware/
 │   │   ├── routes/
@@ -115,53 +159,34 @@ saas-platform/
 │   └── package.json
 │
 └── README.md
-```
-
----
-
-## Getting Started
-
-### Prerequisites
+Getting Started
+Prerequisites
 
 Make sure the following are installed:
 
-- Node.js
-- npm
-- PostgreSQL
-
----
-
-## 1. Clone the Repository
-
-```bash
+Node.js
+npm
+PostgreSQL
+Git
+1. Clone the Repository
 git clone https://github.com/Ritesh-Dixit/saas-platform.git
-```
 
 Move into the project folder:
 
-```bash
 cd saas-platform
-```
-
----
-
-## 2. Set Up the Backend
+2. Set Up the Backend
 
 Move into the server folder:
 
-```bash
 cd server
-```
 
 Install dependencies:
 
-```bash
 npm install
-```
+Backend Environment Variables
 
-Create a `.env` file:
+Create a .env file inside the server directory:
 
-```env
 DATABASE_URL="your_postgresql_database_url"
 
 JWT_SECRET="your_jwt_secret"
@@ -171,245 +196,304 @@ EMAIL_USER="your_email@gmail.com"
 EMAIL_PASS="your_email_app_password"
 
 PORT=5000
-```
 
-Run the database migrations:
+Do not commit your .env file to GitHub.
 
-```bash
+Run Database Migrations
+
+For local development:
+
 npx prisma migrate dev
-```
 
-Generate the Prisma client:
+Generate the Prisma Client:
 
-```bash
 npx prisma generate
-```
+Seed Subscription Plans
 
-Start the backend:
+If you want to populate the database with the default subscription plans:
 
-```bash
+npm run seed
+Start the Backend
+
+Run the development server:
+
 npm run dev
-```
 
 The backend will run at:
 
-```text
 http://localhost:5000
-```
 
-Swagger documentation will be available at:
+Swagger API documentation:
 
-```text
 http://localhost:5000/api-docs
-```
+3. Set Up the Frontend
 
----
+Open another terminal.
 
-## 3. Set Up the Frontend
+Move into the client folder:
 
-Open another terminal and move into the client folder:
-
-```bash
 cd saas-platform/client
-```
 
 Install dependencies:
 
-```bash
 npm install
-```
 
-Create a `.env` file:
+Create a .env file inside the client directory:
 
-```env
 VITE_API_URL=http://localhost:5000/api
-```
 
 Start the frontend:
 
-```bash
 npm run dev
-```
 
 The frontend will run at:
 
-```text
 http://localhost:5173
-```
-
----
-
-## API Overview
-
-### Authentication
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Log in and receive a JWT |
-| POST | `/api/auth/forgot-password` | Request a password reset |
-| POST | `/api/auth/reset-password` | Reset the password |
-
-### Projects
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/projects` | Get the logged-in user's projects |
-| POST | `/api/projects` | Create a project |
-| PUT | `/api/projects/:id` | Update a project |
-| DELETE | `/api/projects/:id` | Delete a project |
-
-### Plans and Subscriptions
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/plans` | Get available subscription plans |
-| POST | `/api/subscriptions` | Create a subscription |
-| GET | `/api/subscriptions/me` | Get the current user's active subscription |
-
----
-
-## Authentication
+API Overview
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Register a new user
+POST	/api/auth/login	Log in and receive a JWT
+POST	/api/auth/forgot-password	Request a password reset
+POST	/api/auth/reset-password	Reset the password
+Projects
+Method	Endpoint	Description
+GET	/api/projects	Get the logged-in user's projects
+POST	/api/projects	Create a project
+PUT	/api/projects/:id	Update a project
+DELETE	/api/projects/:id	Delete a project
+Plans
+Method	Endpoint	Description
+GET	/api/plans	Get available subscription plans
+Subscriptions
+Method	Endpoint	Description
+POST	/api/subscriptions	Create a subscription
+GET	/api/subscriptions/me	Get the current user's active subscription
+Authentication
 
 Protected API routes use JWT Bearer authentication.
 
-After logging in, copy the JWT token and add it to the request header:
+After logging in, the server returns a JWT token.
 
-```http
+Protected requests use the following header:
+
 Authorization: Bearer YOUR_JWT_TOKEN
-```
 
-When using Swagger, use the token format expected by the Swagger authorization field.
+The frontend automatically attaches the JWT token to API requests using an Axios interceptor.
 
----
+Database
 
-## Available Commands
+The project uses:
 
-### Frontend
+PostgreSQL as the database
+Prisma as the ORM
 
-```bash
+The main database entities include:
+
+User
+Project
+Plan
+Subscription
+
+Relationships between users, projects, plans, and subscriptions are managed through Prisma.
+
+Subscription Plans
+
+The application currently supports multiple subscription plans.
+
+Example plans include:
+
+Plan	Price
+Free	₹0
+Basic	₹299
+Pro	₹999
+Enterprise	₹4999
+
+Plans are stored in PostgreSQL and retrieved through the backend API.
+
+Available Commands
+Frontend
+
+Move into the client directory:
+
 cd client
-```
 
-Start the development server:
+Start development server:
 
-```bash
 npm run dev
-```
 
-Create a production build:
+Build for production:
 
-```bash
 npm run build
-```
+Backend
 
-### Backend
+Move into the server directory:
 
-```bash
 cd server
-```
 
-Start the development server:
+Start development server:
 
-```bash
 npm run dev
-```
 
 Build the backend:
 
-```bash
 npm run build
-```
 
 Run tests:
 
-```bash
 npm test
-```
 
-Generate the Prisma client:
+Seed the database:
 
-```bash
+npm run seed
+
+Generate Prisma Client:
+
 npx prisma generate
-```
 
-Run database migrations:
+Create and run development migrations:
 
-```bash
 npx prisma migrate dev
-```
+
+Deploy existing migrations:
+
+npx prisma migrate deploy
 
 Open Prisma Studio:
 
-```bash
 npx prisma studio
-```
-
----
-
-## Security
+Security
 
 The backend includes several security and reliability measures:
 
-- JWT authentication
-- Password hashing with bcrypt
-- Role-based authorization
-- Request validation with Zod
-- Helmet security headers
-- Rate limiting
-- HPP protection
-- CORS configuration
-- Centralized error handling
+JWT authentication
+Password hashing with bcrypt
+Role-based authorization
+Request validation with Zod
+Helmet security headers
+Rate limiting
+HPP protection
+CORS configuration
+Centralized error handling
+Environment variable validation
+Protected API routes
+User-specific resource access
+Deployment
 
----
+The application is deployed using Render.
 
-## Current Project Status
+Frontend
 
-The core application is complete and functional.
+The React frontend is deployed as a production web service.
 
-Implemented:
+https://saas-platform-client.onrender.com
+Backend
 
-- Authentication system
-- Protected dashboard
-- Project CRUD operations
-- File upload support
-- Subscription plans
-- Subscription creation
-- Active subscription retrieval
-- Duplicate subscription protection
-- Swagger API documentation
-- Frontend and backend integration
+The Node.js and Express backend is deployed as a production web service.
 
-Planned improvements:
+https://saas-platform-y9fr.onrender.com
+Database
 
-- Change or upgrade an active subscription
-- Cancel subscriptions
-- Subscription history
-- Payment gateway integration
-- Admin dashboard
-- Email verification
-- Deployment and production environment configuration
+The production application uses PostgreSQL with Prisma ORM.
 
----
+Production migrations are applied using:
 
-## About the Developer
+npx prisma migrate deploy
 
-**Ritesh Dixit**
+The database is seeded with the available subscription plans during deployment.
+
+Deployment Architecture
+User
+ │
+ ▼
+React Frontend
+ │
+ │ HTTPS / REST API
+ ▼
+Express Backend
+ │
+ ▼
+Prisma ORM
+ │
+ ▼
+PostgreSQL Database
+Current Project Status
+
+The core application is complete, functional, and deployed.
+
+Implemented
+User registration
+User login
+JWT authentication
+Protected routes
+Role-based authorization
+Forgot password
+Password reset
+Project CRUD operations
+User-specific project access
+File upload support
+Subscription plans
+Subscription creation
+Active subscription retrieval
+Duplicate subscription protection
+Swagger API documentation
+Request validation
+Centralized error handling
+Security middleware
+PostgreSQL database
+Prisma ORM
+Prisma migrations
+Database seeding
+Frontend and backend integration
+Production CORS configuration
+Production environment configuration
+Frontend deployment
+Backend deployment
+Planned Improvements
+Change or upgrade an active subscription
+Cancel subscriptions
+Subscription history
+Payment gateway integration
+Admin dashboard
+Email verification
+Improved analytics and reporting
+What I Learned
+
+Working on this project helped me gain practical experience with:
+
+Full-stack application architecture
+REST API development
+JWT authentication
+PostgreSQL database design
+Prisma ORM
+Database migrations
+API validation
+Backend security
+Frontend-backend integration
+Environment variable management
+Production CORS configuration
+Database seeding
+Git and GitHub workflows
+Deploying full-stack applications
+Debugging production issues
+
+One of the most valuable parts of the project was taking the application from local development to a live production environment and solving real deployment issues along the way.
+
+About the Developer
+
+Ritesh Dixit
 
 B.Tech Computer Science Engineering student and aspiring Full Stack Developer.
 
-I enjoy building practical web applications, working with modern JavaScript technologies, and improving my skills through hands-on projects.
+I enjoy building practical web applications, working with modern web technologies, and improving my development skills through hands-on projects.
 
----
+Connect
 
-## Connect
+GitHub:
+https://github.com/Ritesh-Dixit
 
-- GitHub: https://github.com/Ritesh-Dixit
-- LinkedIn: https://www.linkedin.com/in/ritesh-dixit-88a665327
-- Email: riteshdixt007@gmail.com
+LinkedIn:
+https://www.linkedin.com/in/ritesh-dixit-88a665327
 
----
-
-## License
-
-This project is licensed under the MIT License.
+Email:
+riteshdixt007@gmail.com
